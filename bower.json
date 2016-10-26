@@ -1,0 +1,16 @@
+{
+  "name": "consume-rest-api-demo",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "darkum1015 <darkum09@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "dependencies": {
+    "angular-bootstrap": "^2.2.0",
+    "angular-route": "^1.5.8",
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  }
+}
