@@ -26,8 +26,9 @@
     }]);
 
     module.run(RunApp);
-    RunApp.$inject = [];
-    function RunApp(){
+    RunApp.$inject = ["$location"];
+    function RunApp($location){
         console.log("Welcome to the Serviceconsume");
+
     }
 })();

@@ -2,9 +2,9 @@
     var module = angular.module('app.module');
 
     module.controller('LoginController',LoginController);
-    LoginController.$inject = ['$scope','$http','$q'];
+    LoginController.$inject = ['$scope','$http','$q','UtilityHelper'];
 
-    function LoginController($scope,$http,$q){
+    function LoginController($scope,$http,$q,UtilityHelper){
         console.log("Login to see all features");
         var vm = this;
         vm.authData ={};
@@ -22,6 +22,7 @@
                     if(data.success){
                         localStorage.setItem('authToken',data.token);
                         vm.loginFailed = false;
+                        UtilityHelper.navigateTo('/home');
                     }else{
                         vm.loginFailed = true;
                         vm.loginFailureMessage = data.message;
