@@ -4,7 +4,7 @@
     module.config(function ($httpProvider) {
         $httpProvider.defaults.headers.common = {};
         $httpProvider.defaults.headers.post = {};
-        $httpProvider.defaults.headers.get = {};
+
         $httpProvider.defaults.headers.put = {};
         $httpProvider.defaults.headers.patch = {};
     });
@@ -14,6 +14,9 @@
            templateUrl: 'app/modules/home/home.html',
            controller: 'HomeController',
            controllerAs: 'homeCtrl'
+       }).when('/edit/bear/:id',{
+           templateUrl: 'app/modules/edit/edit-bear.html',
+           controller:  'EditBearController as editBearCtrl'
        })
            .when('/login',{
                templateUrl: 'app/modules/login/login.html',

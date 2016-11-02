@@ -6,11 +6,25 @@
     <div class="col-md-12">
         <table class="table">
             <tr><th>
-                Scientific Name
+                Common Name
             </th>
             <th>
                 Species
             </th>
+                <th>
+
+                </th>
+            </tr>
+            <tr ng-repeat="item in homeCtrl.bearList">
+                <td>
+                    {{item.name}}
+                </td>
+                <td>
+                    {{item.species}}
+                </td>
+                <td>
+                    <span ng-click="homeCtrl.editBears(item._id)">Edit</span>&nbsp;<span>Delete</span>
+                </td>
             </tr>
         </table>
     </div>
