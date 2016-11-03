@@ -19,7 +19,7 @@
         function getBears(){
 
             if(authToken){
-                var url = "http://localhost:8100/api/bears?token="+authToken
+                var url = "http://localhost:8100/api/bears"
 
 
                 $http({
@@ -27,6 +27,7 @@
                     "url": url,
                     "method": "GET",
                     "headers": {
+                        "x-access-token": authToken,
                         "content-type":"application/x-www-form-urlencoded"
                     }
 

@@ -9,10 +9,11 @@
         this.getBear = function(authToken,itemId){
             var deferred = $q.defer();
             $http({
-                'url':'http://localhost:8100/api/bears/'+itemId + "?token="+authToken,
+                'url':'http://localhost:8100/api/bears/'+itemId,
                 'method': 'GET',
                 "headers": {
-                    "content-type":"application/x-www-form-urlencoded"
+                    'x-access-token':authToken,
+                    'Content-Type': 'application/x-www-form-urlencoded'
                 }
 
 
@@ -28,10 +29,13 @@
             var deferred = $q.defer();
             if(item){
                 $http({
-                    'url':'http://localhost:8100/api/bears/'+itemId + "?token="+authToken,
+                    'url':'http://localhost:8100/api/bears/'+itemId,
                     'method':'PUT',
                     'headers':{
-                        'content-type': 'application/x-www-form-urlencoded'
+                        'x-access-token':authToken,
+                        'Content-Type': 'application/x-www-form-urlencoded'
+
+
                     },
                     "data": "name="+item.name+"&species="+item.species
                 }).then(function success(response){
